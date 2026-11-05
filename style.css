@@ -1,0 +1,218 @@
+
+/* =============================================================
+   TECHSTORE - style.css
+   Cada linha tem um comentário dizendo o que ela faz.
+   Não gostou de algo? Apague a linha (ou troque o valor) e veja
+   o que muda. Dica: depois de salvar, aperte Ctrl + F5.
+   ============================================================= */
+
+
+/* -------------------------------------------------------------
+   0. FONTES
+   ------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600&family=Barlow+Condensed:wght@600;700&display=swap"); /* baixa duas fontes do Google Fonts: Barlow (textos) e Barlow Condensed (títulos, parecida com a letra do banner) */
+
+
+/* -------------------------------------------------------------
+   1. PÁGINA INTEIRA
+   ------------------------------------------------------------- */
+body {
+  font-family: "Barlow", Arial, sans-serif;   /* fonte dos textos; se a Barlow não carregar, usa Arial */
+  background-color: #f4f3f8;                  /* cor de fundo da página (cinza bem claro, quase branco) */
+  color: #2a2640;                             /* cor padrão de todo o texto (grafite escuro, mais suave que o preto puro) */
+  margin: 0;                                  /* tira a margem branca que o navegador coloca em volta da página */
+  line-height: 1.6;                           /* espaço entre as linhas do texto, facilita a leitura */
+}
+
+img {
+  max-width: 100%;                            /* nenhuma imagem passa da largura da tela (importante no celular) */
+  display: block;                             /* imagem vira um bloco, isso remove um espacinho estranho embaixo dela */
+  margin: 0 auto;                             /* centraliza a imagem na horizontal */
+}
+
+
+/* -------------------------------------------------------------
+   2. TABELAS EM GERAL (tira o visual de planilha)
+   ------------------------------------------------------------- */
+table {
+  border: none;                               /* remove a borda externa que vem do border="1" */
+  border-collapse: collapse;                  /* junta as bordas das células numa só */
+}
+
+td {
+  border: none;                               /* remove a borda de cada célula */
+}
+
+
+/* -------------------------------------------------------------
+   3. BANNER (1ª tabela da página)
+   ------------------------------------------------------------- */
+table:nth-of-type(1) td {
+  padding: 0;                                 /* tira o espaço em volta do banner, ele encosta nas bordas da tela */
+  background-color: #16034a;                  /* faixa escura atrás do título, continua a cor do banner */
+}
+
+table:nth-of-type(1) img {
+  width: 100%;                                /* banner ocupa toda a largura */
+  height: auto;                               /* altura acompanha a largura, a imagem não fica esticada */
+}
+
+h1 {
+  font-family: "Barlow Condensed", Arial, sans-serif; /* fonte estreita, combina com a letra do banner */
+  font-size: 2.6rem;                          /* tamanho do título TechStore */
+  letter-spacing: 1px;                        /* afasta um pouco as letras */
+  color: #ffffff;                             /* título em branco puro */
+  margin: 24px 0 0;                           /* espaço acima do título */
+}
+
+h1 + p {
+  color: #f4a6c6;                             /* frase "Informática e Eletrônicos" em rosa (mesma cor dos triângulos do banner) */
+  margin: 0 0 20px;                           /* aproxima a frase do título e dá espaço embaixo */
+  font-size: 1.1rem;                          /* frase um pouco maior que o texto normal */
+}
+
+
+/* -------------------------------------------------------------
+   4. MENU (2ª tabela da página)
+   ------------------------------------------------------------- */
+table:nth-of-type(2) {
+  position: sticky;                           /* o menu "gruda" no topo da tela quando a página rola */
+  top: 0;                                     /* gruda exatamente no topo */
+  z-index: 10;                                /* fica por cima das outras coisas ao rolar */
+  background-color: #ffffff;                  /* menu em faixa branca, separa o topo escuro do conteúdo */
+  box-shadow: 0 2px 10px rgba(22, 3, 74, 0.08); /* sombra leve embaixo do menu, dá sensação de "flutuar" */
+}
+
+table:nth-of-type(2) td {
+  padding: 12px;                              /* altura da faixa do menu */
+  color: #cfcbe0;                             /* cor das barrinhas | entre os links (cinza claro, discretas) */
+}
+
+a {
+  color: #16034a;                             /* cor dos links (azul-marinho da marca) */
+  text-decoration: none;                      /* tira o sublinhado */
+  font-weight: 600;                           /* links em seminegrito */
+  padding: 6px 14px;                          /* área em volta do link, fica mais fácil de clicar */
+  border-radius: 20px;                        /* arredonda os cantos (formato de pílula no hover) */
+  transition: background-color 0.2s, color 0.2s; /* a troca de cor acontece suave, em 0,2 segundo */
+}
+
+a:hover {
+  background-color: #e8457c;                  /* ao passar o mouse, aparece um fundo rosa forte */
+  color: #ffffff;                             /* e o texto do link fica branco */
+}
+
+
+/* -------------------------------------------------------------
+   5. TÍTULOS DAS SEÇÕES (Nossos Produtos, Sobre, Contato)
+   ------------------------------------------------------------- */
+h2 {
+  font-family: "Barlow Condensed", Arial, sans-serif; /* mesma fonte do título principal */
+  font-size: 2rem;                            /* tamanho dos títulos de seção */
+  color: #16034a;                             /* títulos em azul-marinho da marca */
+  max-width: 1100px;                          /* largura máxima, alinha com a área dos produtos */
+  margin: 48px auto 8px;                      /* espaço em cima, centraliza o bloco e pouco espaço embaixo */
+  padding: 0 20px 0 16px;                     /* afasta o texto da borda da tela (resolve o "Nossos" cortado) */
+  border-left: 5px solid #e8457c;             /* barrinha rosa à esquerda do título */
+}
+
+h2 ~ p {
+  max-width: 1100px;                          /* parágrafos do Sobre e do Contato com a mesma largura dos títulos */
+  margin: 0 auto;                             /* centraliza o bloco de texto */
+  padding: 0 20px 0 21px;                     /* alinha o texto com o título (5px da barrinha + 16px) */
+}
+
+
+/* -------------------------------------------------------------
+   6. PRODUTOS (a tabela que vem logo depois do h2)
+   ------------------------------------------------------------- */
+h2 + table {
+  border-collapse: separate;                  /* separa as células para elas virarem "cartões" */
+  border-spacing: 20px;                       /* espaço entre um cartão e outro */
+  max-width: 1140px;                          /* largura máxima da vitrine em telas grandes */
+  margin: 0 auto;                             /* centraliza a vitrine */
+}
+
+h2 + table td {
+  background-color: #ffffff;                  /* fundo branco do cartão, destaca do fundo cinza da página */
+  border: 1px solid #e4e1ee;                  /* borda fina e clara do cartão */
+  border-radius: 16px;                        /* cantos arredondados */
+  padding: 20px;                              /* espaço interno do cartão */
+  vertical-align: top;                        /* conteúdo começa no topo, mesmo se um cartão tiver mais texto */
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; /* animação suave do efeito de hover */
+}
+
+h2 + table td:hover {
+  transform: translateY(-6px);                /* o cartão "sobe" 6px ao passar o mouse */
+  border-color: #e8457c;                      /* e a borda fica rosa */
+  box-shadow: 0 10px 24px rgba(22, 3, 74, 0.12); /* e ganha uma sombra, como se saísse da página */
+}
+
+h2 + table img {
+  width: 150px;                               /* largura da foto do produto */
+  height: 150px;                              /* altura da foto do produto */
+  object-fit: contain;                        /* a foto cabe inteira no quadrado, sem distorcer */
+  border-radius: 12px;                        /* cantos arredondados da foto */
+}
+
+h2 + table br {
+  display: none;                              /* esconde o <br> vazio que fica antes da imagem */
+}
+
+h3 {
+  font-family: "Barlow Condensed", Arial, sans-serif; /* nome do produto na fonte dos títulos */
+  font-size: 1.4rem;                          /* tamanho do nome do produto */
+  color: #16034a;                             /* nome em azul-marinho */
+  margin: 16px 0 4px;                         /* espaço acima e abaixo do nome */
+}
+
+h2 + table td p {
+  margin: 4px 0;                              /* aproxima os parágrafos dentro do cartão */
+  color: #6e6987;                             /* descrição em cinza, menos destaque que o nome */
+}
+
+h2 + table td p:last-child {
+  font-size: 1.5rem;                          /* preço grande (é o último parágrafo do cartão) */
+  font-weight: 600;                           /* preço em seminegrito */
+  color: #e8457c;                             /* preço em rosa forte, para chamar atenção */
+  margin-top: 12px;                           /* afasta o preço da descrição */
+}
+
+
+/* -------------------------------------------------------------
+   7. RODAPÉ (última tabela da página)
+   ------------------------------------------------------------- */
+table:last-of-type {
+  margin-top: 56px;                           /* espaço entre o Contato e o rodapé */
+}
+
+table:last-of-type td {
+  padding: 0;                                 /* rodapé encosta nas bordas, igual ao banner */
+}
+
+table:last-of-type img {
+  width: 100%;                                /* rodapé ocupa toda a largura */
+  height: auto;                               /* corrige a imagem esticada pelo height="180" do HTML */
+}
+
+
+/* -------------------------------------------------------------
+   8. CELULAR (telas com até 700px de largura)
+   ------------------------------------------------------------- */
+@media (max-width: 700px) {
+  h2 + table,
+  h2 + table tbody,
+  h2 + table tr,
+  h2 + table td {
+    display: block;                           /* no celular, a tabela deixa de ser tabela: um cartão embaixo do outro */
+    width: auto;                              /* ignora o width="33%" do HTML */
+  }
+
+  h2 + table td {
+    margin: 0 16px 16px;                      /* espaço em volta de cada cartão no celular */
+  }
+
+  a {
+    padding: 6px 8px;                         /* links do menu mais compactos para caber na tela */
+  }
+}
