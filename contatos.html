@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BANNER (igual ao das outras páginas) -->
+    <table class="banner" border="1" width="100%" cellpadding="12">
+        <tr>
+            <td align="center">
+                <img src="banner.png" alt="Banner da TechStore" width="100%">
+                <h1>TechStore</h1>
+                <p>Informática e Eletrônicos</p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- MENU -->
+    <table class="menu" border="1" width="100%" cellpadding="8">
+        <tr>
+            <td align="center">
+                <a href="index.html">Início</a> |
+                <a href="produtos.html">Produtos</a> |
+                <a href="index.html#sobre">Sobre</a> |
+                <a href="contato.html">Contato</a>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Fale Conosco</h2>
+    <p>Preencha o formulário e responderemos o mais rápido possível.</p>
+
+    <!-- FORMULÁRIO -->
+    <!-- action = endereço para onde os dados serão enviados (Formspree) -->
+    <!-- method = forma de envio (POST = os dados não aparecem no endereço) -->
+    <form class="formulario" action="https://formspree.io/f/SEU_CODIGO" method="POST">
+
+        <!-- label = texto que aparece acima do campo -->
+        <label for="nome">Nome:</label>
+        <!-- input type="text" = campo de texto | required = obrigatório -->
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        <label for="email">E-mail:</label>
+        <!-- type="email" = o navegador confere se tem @ -->
+        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required>
+
+        <label for="telefone">Telefone / WhatsApp:</label>
+        <!-- type="tel" = no celular abre o teclado numérico -->
+        <input type="tel" id="telefone" name="telefone" placeholder="(43) 90000-0000">
+
+        <label for="assunto">Assunto:</label>
+        <!-- select = lista de opções para escolher -->
+        <select id="assunto" name="assunto" required>
+            <option value="">Selecione...</option>
+            <option>Dúvida sobre produto</option>
+            <option>Orçamento</option>
+            <option>Suporte técnico</option>
+            <option>Outro</option>
+        </select>
+
+        <label for="mensagem">Mensagem:</label>
+        <!-- textarea = caixa de texto com várias linhas -->
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+
+        <!-- button type="submit" = botão que envia o formulário -->
+        <button type="submit">Enviar mensagem</button>
+
+    </form>
+
+    <!-- RODAPÉ -->
+    <table class="rodape" border="1" width="100%" cellpadding="12">
+        <tr>
+            <td align="center">
+                <img src="foot.png" alt="Rodapé da TechStore" width="100%">
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

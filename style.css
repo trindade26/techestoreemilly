@@ -216,3 +216,59 @@ table:last-of-type img {
     padding: 6px 8px;                         /* links do menu mais compactos para caber na tela */
   }
 }
+/* -------------------------------------------------------------
+   PÁGINA DE CONTATO - FORMULÁRIO
+   ------------------------------------------------------------- */
+.formulario {
+  max-width: 600px;                 /* largura máxima da caixa do formulário */
+  margin: 24px auto;                /* centraliza o formulário na página */
+  background-color: #ffffff;        /* fundo branco, igual aos cartões de produto */
+  padding: 30px;                    /* espaço interno da caixa */
+  border-radius: 16px;              /* cantos arredondados */
+  border: 1px solid #e4e1ee;        /* borda fina e clara */
+}
+
+.formulario label {
+  display: block;                   /* cada texto fica numa linha, acima do campo */
+  font-weight: 600;                 /* texto em seminegrito */
+  color: #16034a;                   /* azul-marinho da marca */
+  margin-top: 16px;                 /* espaço acima de cada campo */
+  margin-bottom: 6px;               /* espaço entre o texto e o campo */
+}
+
+.formulario input,
+.formulario select,
+.formulario textarea {
+  width: 100%;                      /* campo ocupa toda a largura da caixa */
+  box-sizing: border-box;           /* o espaço interno não faz o campo passar da caixa */
+  padding: 12px;                    /* espaço dentro do campo */
+  font-size: 1rem;                  /* tamanho do texto digitado */
+  font-family: inherit;             /* usa a mesma fonte do site */
+  border: 1px solid #d9d5ea;        /* borda cinza clara */
+  border-radius: 8px;               /* cantos arredondados */
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+  outline: none;                    /* tira o contorno padrão do navegador */
+  border-color: #e8457c;            /* borda rosa no campo em que o cliente está digitando */
+}
+
+.formulario button {
+  margin-top: 24px;                 /* espaço acima do botão */
+  width: 100%;                      /* botão ocupa toda a largura */
+  padding: 14px;                    /* tamanho do botão */
+  font-size: 1.1rem;                /* tamanho do texto do botão */
+  font-weight: 600;                 /* texto em seminegrito */
+  color: #ffffff;                   /* texto branco */
+  background-color: #e8457c;        /* botão rosa (cor de destaque do site) */
+  border: none;                     /* sem borda */
+  border-radius: 24px;              /* botão arredondado */
+  cursor: pointer;                  /* mãozinha ao passar o mouse */
+}
+
+.formulario button:hover {
+  background-color: #c9336a;        /* rosa mais escuro ao passar o mouse */
+}
+
